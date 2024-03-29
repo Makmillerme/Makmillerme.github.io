@@ -1,23 +1,39 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST["name"];
-    $email = $_POST["Email"];
-    $phone = $_POST["Phone"];
-
-    $to = "gerukmaks444@gmail.com"; // Замініть на свою електронну адресу
-    $subject = "Нове повідомлення з форми зворотного зв'язку";
-    $message = "Ім'я: " . $name . "\n";
-    $message .= "Електронна пошта: " . $email . "\n";
-    $message .= "Номер телефону: " . $phone . "\n";
-
-    $headers = "From: " . $email . "\r\n";
-    $headers .= "Reply-To: " . $email . "\r\n";
-    $headers .= "X-Mailer: PHP/" . phpversion();
-
-    if (mail($to, $subject, $message, $headers)) {
-        echo "Повідомлення успішно відправлено!";
-    } else {
-        echo "Виникла помилка під час відправки повідомлення.";
+$to = "gerukmaks444@gmail.com";//Почтовый ящик на который будет отправленно сообщение
+  $subject = "Тема сообщения";//Тема сообщения
+  $message = "Message, сообщение!";//Сообщение, письмо
+  $headers = "Content-type: text/plain; charset=utf-8 \r\n";//Шапка сообщения, 
+  //содержит определение типа письма, от кого, и кому отправить ответ на письмо
+// Проверяем или метод запроса POST
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    // Поочередно проверяем или были переданные параметры формы, или они не пустые
+    if(isset($_POST["username"]){
+      //Если параметр есть, присваеваем ему переданое значение
+      $name     =trim(strip_tags($_POST["username"]));
     }
+    if(isset($_POST["usernumber"]))
+    {
+      $number   = trim(strip_tags($_POST["usernumber"]));
+    }
+    if (isset( $_POST["question"])) {
+      $question   = trim(strip_tags($question));
+    }
+      // Формируем письмо
+      $message  = "<html>";
+        $message  .= "<body>";
+        $message  .= "Телефон: ".$number;
+        $message  .= "<br />";
+        $message  .= "Имя: ".$name;
+        $message  .= "<br />";
+        $message  .= "Вопрос: ".$question;
+        $message  .= "</body>";
+      $message  .= "</html>";
+      // Окончание формирования тела письма
+      // Посылаем письмо
+      mail ($to, $subject, $message, $headers);
 }
+else
+{
+  exit;
+} 
 ?>
