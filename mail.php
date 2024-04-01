@@ -7,17 +7,16 @@ $to = "gerukmaks444@gmail.com";//Почтовый ящик на который �
 // Проверяем или метод запроса POST
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Поочередно проверяем или были переданные параметры формы, или они не пустые
-    if(isset($_POST["username"]){
-      //Если параметр есть, присваеваем ему переданое значение
-      $name     =trim(strip_tags($_POST["username"]));
-    }
-    if(isset($_POST["usernumber"]))
-    {
-      $number   = trim(strip_tags($_POST["usernumber"]));
-    }
-    if (isset( $_POST["question"])) {
-      $question   = trim(strip_tags($question));
-    }
+    if(isset($_POST["username"])){ // Додано відсутню закриваючу круглу дужку
+  $name     = trim(strip_tags($_POST["username"]));
+}
+if(isset($_POST["usernumber"]))
+{
+  $number   = trim(strip_tags($_POST["usernumber"]));
+}
+if (isset($_POST["question"])) { // Виправлено на правильне отримання значення з POST
+  $question = trim(strip_tags($_POST["question"]));
+}
       // Формируем письмо
       $message  = "<html>";
         $message  .= "<body>";
