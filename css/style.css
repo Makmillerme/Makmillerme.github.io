@@ -6744,12 +6744,12 @@ height: 30px;
   }
 
   .testimonials-content {
-    max-width: 50%;
+    max-width: 100%;
   }
 
   .testiomonials-photo {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
   }
   .scribble_two {
     top: 25px;
@@ -7259,9 +7259,8 @@ height: 30px;
   }
 
   .testiomonials-photo {
-    margin-right: 0px;
-    margin-bottom: 40px;
     border-radius: 100%;
+    margin: 0 auto 40px;
   }
 
   .button-cricle {
