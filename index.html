@@ -2,9 +2,10 @@
 <html data-wf-page="62594e5c6f2debf64f80fe9d" >
    <head>
       <meta charset="utf-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Fidelis</title>
       <link href="css/style.css" rel="stylesheet" type="text/css"/>
-      
+      <link href="css/modal.css" rel="stylesheet" type="text/css"/>
       <link rel="preload" href="font/Acumin-BdItPro.otf" as="font" type="font/otf" crossorigin="anonymous">
       <link rel="preload" href="font/Acumin-BdPro.otf" as="font" type="font/otf" crossorigin="anonymous">
       <link rel="preload" href="font/Acumin-ItPro.otf" as="font" type="font/otf" crossorigin="anonymous">
@@ -246,7 +247,7 @@
             </div>
          </div>
 
-        
+         <hr class="hr-22">
 
                      <div class="section">
                         <div class="testimonials-center">
@@ -261,6 +262,8 @@
                         </div>
                      </div>
         
+
+         <hr class="hr-23">
          
       <div class="container">
          <div class="section">
@@ -294,22 +297,18 @@
                               <div class="absolute-background"></div>
                            </div>
                         </div>
-                        <div id="w-node-e9bf0bb1-ac8b-ad33-ace5-d030d1f0efd7-4f80fe9d" >
+                        <div id="contactFormBlock" >
                            <h1 data-w-id="e9bf0bb1-ac8b-ad33-ace5-d030d1f0efd8"  class="title-2">kontaktformular</h1>
                            <div class="margin-60px">
+                              
                               <div class="form-block w-form" >
                                  <form id="wf-form-Call-Me-Back" name="wf-form-Call-Me-Back" data-name="Call Me Back" method="POST" action="mail.php" data-wf-page-id="62594e5c6f2debf64f80fe9d" data-wf-element-id="deb5c7e3-b975-a20d-9fb3-cc4775df1a99">
-                                    <div data-w-id="deb5c7e3-b975-a20d-9fb3-cc4775df1a9a"  class="contact-flex-page"><label for="name" class="field-label">VOLLSTÄNDIGER NAME*</label><input class="text-field-form w-input" maxlength="256" name="name" data-name="Name" placeholder="" type="text" id="name" required=""/></div>
-                                    <div data-w-id="deb5c7e3-b975-a20d-9fb3-cc4775df1a9e"  class="contact-flex-page"><label for="Email" class="field-label">E-MAIL-ADRESSE*</label><input class="text-field-form w-input" maxlength="256" name="Email" data-name="Email" placeholder="" type="email" id="Email" required=""/></div>
-                                    <div data-w-id="deb5c7e3-b975-a20d-9fb3-cc4775df1aa2"  class="contact-flex-page"><label for="Phone" class="field-label">TELEFONNUMMER*</label><input class="text-field-form w-input" maxlength="256" name="Phone" data-name="Phone" placeholder="" type="tel" id="Phone" required=""/></div>
+                                    <div data-w-id="deb5c7e3-b975-a20d-9fb3-cc4775df1a9a"  class="contact-flex-page"><label for="username" class="field-label">VOLLSTÄNDIGER NAME*</label><input class="text-field-form w-input" maxlength="256" name="username" data-name="username" placeholder="" type="text" id="username" required=""/></div>
+                                    <div data-w-id="deb5c7e3-b975-a20d-9fb3-cc4775df1a9e"  class="contact-flex-page"><label for="usernumber" class="field-label">E-MAIL-ADRESSE*</label><input class="text-field-form w-input" maxlength="256" name="usernumber" data-name="usernumber" placeholder="" type="usernumber" id="usernumber" required=""/></div>
+                                    <div data-w-id="deb5c7e3-b975-a20d-9fb3-cc4775df1aa2"  class="contact-flex-page"><label for="question" class="field-label">TELEFONNUMMER*</label><input class="text-field-form w-input" maxlength="256" name="question" data-name="question" placeholder="" type="tel" id="question" required=""/></div>
                                     <div data-w-id="deb5c7e3-b975-a20d-9fb3-cc4775df1aab" ><input type="submit" data-wait="Please wait..." class="button full w-button" value="Call me back"/></div>
                                  </form>
-                                 <div class="success-message w-form-done">
-                                    <div>Thank you! Your submission has been received!</div>
-                                 </div>
-                                 <div class="error-message w-form-fail">
-                                    <div>Oops! Something went wrong while submitting the form.</div>
-                                 </div>
+                                 
                               </div>
                            </div>
                         </div>
@@ -379,6 +378,15 @@
                </div>
             </div>
          </div>
+
+         <!-- Модальне вікно для повідомлень -->
+                              <div class="modal-backdrop" id="modal">
+                              <div class="modal">
+                              <button onclick="closeModal()" class="close-modal">&times;</button>
+                              <p id="modalMessage"></p>
+                              </div>
+                              </div>
+
       <a href="#Top" style="-webkit-transform:translate3d(150%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(150%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(150%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(150%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" 
          class="button-top go-top w-inline-block">
       <img src="https://assets.website-files.com/624c4b185ef5f6159887042a/624fe91f72cb26d1a489835c_arrow_drop_up_white_24dp (1).svg" loading="lazy" alt="" width="28" class="arrow-img"/>
@@ -387,5 +395,6 @@
       <script src="js/jquery-3.4.1.min.js" type="text/javascript" ></script>
       <script src="js/scripts.js" type="text/javascript"></script>
       <script src="js/maska-nomera.js" type="text/javascript" ></script>
+      <script src="js/modal.js" type="text/javascript" ></script>
    </body>
 </html>

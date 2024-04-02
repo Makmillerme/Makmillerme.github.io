@@ -21,6 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mail($to, $subject, $message, $headers)) {
         $response["status"] = "success";
         $response["message"] = "Die E-Mail wurde erfolgreich gesendet.";
+    
     } else {
         $response["status"] = "error";
         $response["message"] = "Die E-Mail wurde nicht gesendet.";
