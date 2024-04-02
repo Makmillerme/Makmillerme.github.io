@@ -1,38 +1,34 @@
 <?php
-$to = "gerukmaks444@gmail.com";//Почтовый ящик на который будет отправленно сообщение
-  $subject = "Тема сообщения";//Тема сообщения
-  $message = "Message, сообщение!";//Сообщение, письмо
-  $headers = "Content-type: text/plain; charset=utf-8 \r\n";//Шапка сообщения, 
-  //содержит определение типа письма, от кого, и кому отправить ответ на письмо
-// Проверяем или метод запроса POST
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-    // Поочередно проверяем или были переданные параметры формы, или они не пустые
-    if(isset($_POST["username"])){ // Додано відсутню закриваючу круглу дужку
-  $name     = trim(strip_tags($_POST["username"]));
+header('Content-Type: application/json'); // Встановлюємо заголовок відповіді у форматі JSON
+
+$to = "gerukmaks444@gmail.com";
+$subject = "Feedback-Formular von der Website Fidelis";
+$headers = "Content-type: text/html; charset=utf-8 \r\n";
+
+$response = [];
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = isset($_POST["username"]) ? trim(strip_tags($_POST["username"])) : "";
+    $number = isset($_POST["usernumber"]) ? trim(strip_tags($_POST["usernumber"])) : "";
+    $question = isset($_POST["question"]) ? trim(strip_tags($_POST["question"])) : "";
+
+    $message = "<html><body>";
+    $message .= "VOLLSTÄNDIGER NAME: " . $name . "<br />";
+    $message .= "E-MAIL-ADRESSE: " . $number . "<br />";
+    $message .= "TELEFONNUMMER: " . $question;
+    $message .= "</body></html>";
+
+    if (mail($to, $subject, $message, $headers)) {
+        $response["status"] = "success";
+        $response["message"] = "Die E-Mail wurde erfolgreich gesendet.";
+    } else {
+        $response["status"] = "error";
+        $response["message"] = "Die E-Mail wurde nicht gesendet.";
+    }
+} else {
+    $response["status"] = "error";
+    $response["message"] = "Ungültige Anfrage.";
 }
-if(isset($_POST["usernumber"]))
-{
-  $number   = trim(strip_tags($_POST["usernumber"]));
-}
-if (isset($_POST["question"])) { // Виправлено на правильне отримання значення з POST
-  $question = trim(strip_tags($_POST["question"]));
-}
-      // Формируем письмо
-      $message  = "<html>";
-        $message  .= "<body>";
-        $message  .= "Телефон: ".$number;
-        $message  .= "<br />";
-        $message  .= "Имя: ".$name;
-        $message  .= "<br />";
-        $message  .= "Вопрос: ".$question;
-        $message  .= "</body>";
-      $message  .= "</html>";
-      // Окончание формирования тела письма
-      // Посылаем письмо
-      mail ($to, $subject, $message, $headers);
-}
-else
-{
-  exit;
-} 
+
+echo json_encode($response); // Повертаємо відповідь у форматі JSON
 ?>
