@@ -5445,10 +5445,9 @@ figcaption {
 
 .hero {
 	position: relative;
-
 	display: flex;
 	overflow: hidden;
-	height: 100vh;
+	height: 70vh;
 	padding: 150px 5% 120px;
 
 	justify-content: center;
@@ -6440,8 +6439,7 @@ figcaption {
 }
 
 .work-item-title {
-	margin-top: 0px;
-	margin-bottom: 0px;
+	margin: auto;
 	font-size: 19px;
 	line-height: 1;
 	font-weight: 500;
@@ -6665,11 +6663,11 @@ figcaption {
 }
 
 .logo-foot {
-	margin-top: 20px;
+	margin-top: 70px;
 }
 
 .copyright {
-	margin-top: 25px;
+	margin-top: 35px;
 	color: #b1b7c0;
 	font-size: 16px;
 	font-weight: 500;
