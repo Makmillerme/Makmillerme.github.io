@@ -4167,7 +4167,6 @@ blockquote {
 	margin-bottom: 10px;
 	padding-top: 0px;
 	padding-bottom: 0px;
-	padding-left: 0px;
 	border: 1px none #000;
 	font-family: Satoshi, sans-serif;
 	color: #54565a;
@@ -4700,7 +4699,7 @@ figcaption {
 .title-2 {
 	margin-top: 0px;
 	margin-bottom: 0px;
-	font-size: 70px;
+	font-size: 65px;
 	line-height: 1.2;
 	font-weight: 500;
 	text-transform: uppercase;
@@ -6699,8 +6698,7 @@ figcaption {
 .testimonials-content {
 	display: flex;
 	max-width: 50%;
-	margin-right: auto;
-	margin-left: auto;
+	margin: auto;
 }
 
 .testimonials-center {
