@@ -4561,7 +4561,7 @@ figcaption {
 
 .title-1 {
 	position: relative;
-	margin-top: 25px;
+	padding-top: 55px;
 	margin-bottom: 0px;
 	font-size: 120px;
 	line-height: 1.15;
@@ -5347,14 +5347,13 @@ figcaption {
 }
 
 .hero {
+
 	position: relative;
 	display: flex;
 	overflow: hidden;
-	height: 70vh;
+	height: 100vh;
 	padding: 150px 5% 120px;
-
 	justify-content: center;
-
 	align-items: center;
 }
 
